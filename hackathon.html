@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<head>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<title>Post-Covid Guide</title>
+<style>
+
+.button {
+  background-color: #47E8E7;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #19BBE0;
+  color: white;
+  box-shadow: 5px 5px 2px grey;
+}
+
+.button1:hover {
+  background-color: #1694B1;
+  color: white;
+}
+.button2 {
+  float:right;
+  background-color: #EE4A40;
+  color: white;
+  box-shadow: 5px 5px 2px grey;
+}
+
+.button2:hover {
+  background-color: #F0837C;
+  color: white;
+}
+.button3 {
+  padding: 15px 24px;
+  border-radius:50%;
+  background-color: black;
+  color: white;
+}
+
+.button3:hover {
+  background-color: white;
+  color: black;
+}
+.button4 {
+  background-color: black;
+  color: black;
+}
+
+.button4:hover {
+  background-color: white;
+  color: white;
+}
+.button5 {
+  box-shadow: 5px 5px 2px grey;
+  background-color: #6473F5;
+  color: white;
+}
+
+.button5:hover {
+  background-color: #A0A9F7;
+  color: white;
+}
+.button6 {
+  background-color: #60A2F3;
+  color: black;
+  font-size:20px;
+  line-height:0;
+  padding:0px;
+}
+.container {
+  box-shadow: 5px 5px 2px grey;
+    border-radius:8px;
+  background-color:white;
+  margin-right:5%;
+  float:left;
+  position: relative;
+  width: 25%;
+}
+
+.image {
+  border-radius:8px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  border-radius:8px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.div1 {
+  margin-bottom: 10%;
+  text-align: center;
+  /*animation: fadein 2s;*/
+}
+#div2 {
+  padding-top:2%;
+  padding-bottom: 5%;
+  padding-left:3%;
+  padding-right:5%;
+  text-align: left;
+  background-color: #90F9EA;
+  margin-bottom: 5%;
+}
+
+.div3 {
+  padding-top:2%;
+  padding-bottom: 10%;
+  padding-left:3%;
+  padding-right:5%;
+  text-align: left;
+  background-color: #F3A560;
+  margin-bottom: 5%;
+}
+.div4 {
+  padding-top:2%;
+  padding-bottom: 5%;
+  padding-left:3%;
+  padding-right:5%;
+  text-align: left;
+  background-color: #60A2F3;
+}
+.artsy{
+  padding-top:2%;
+  padding-bottom: 10%;
+  padding-left:3%;
+  padding-right:5%;
+  text-align: left;
+  background-color: #60A2F3;
+  display:none;
+  overflow:auto;
+}
+.centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottom-right {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+.question{
+  font-size:20px;
+  padding-top:2%;
+  padding-bottom: 10%;
+  padding-left:3%;
+  padding-right:5%;
+  text-align: left;
+  background-color: #F3A560;
+  margin-bottom: 5%;
+  display:none;
+}
+.simula{
+  font-family: "Verdana", sans-serif;
+  font-size:20px;
+  padding-top:2%;
+  padding-bottom: 25%;
+  padding-left:3%;
+  padding-right:5%;
+  text-align: left;
+  background-color: #90F9EA;
+  margin-bottom: 5%;
+  display:none;
+}
+input[type=text] {
+  background-color: #F3A560;
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+}
+</style>
+<script>
+function start(){
+  document.getElementById("starting").style.display="none";
+  document.getElementById("question1").style.display="block";
+}
+function checkAnswer1(){
+      document.getElementById("answer1").style.display="none";
+      document.getElementById("tada").style.display="block";
+}
+function back1(){
+  document.getElementById("question1").style.display="none";
+  document.getElementById("starting").style.display="block";
+}
+function back2(){
+  document.getElementById("question2").style.display="none";
+  document.getElementById("question1").style.display="block";
+}
+function back3(){
+  document.getElementById("question3").style.display="none";
+  document.getElementById("question2").style.display="block";
+}
+function back4(){
+  document.getElementById("question4").style.display="none";
+  document.getElementById("question3").style.display="block";
+}
+function back5(){
+  document.getElementById("question5").style.display="none";
+  document.getElementById("question4").style.display="block";
+}
+function next1(){
+  document.getElementById("question1").style.display="none";
+  document.getElementById("question2").style.display="block";
+}
+function checkAnswer2(){
+      document.getElementById("answer2").style.display="none";
+      document.getElementById("tada2").style.display="block";
+}
+function next2(){
+  document.getElementById("question2").style.display="none";
+  document.getElementById("question3").style.display="block";
+}
+function checkAnswer3(){
+      document.getElementById("answer3").style.display="none";
+      document.getElementById("tada3").style.display="block";
+}
+function checkAnswer4(){
+      document.getElementById("answer4").style.display="none";
+      document.getElementById("tada4").style.display="block";
+}
+function checkAnswer5(){
+      document.getElementById("answer5").style.display="none";
+      document.getElementById("tada5").style.display="block";
+}
+function next3(){
+  document.getElementById("question3").style.display="none";
+  document.getElementById("question4").style.display="block";
+}
+function next4(){
+  document.getElementById("question4").style.display="none";
+  document.getElementById("question5").style.display="block";
+}
+function next5(){
+  document.getElementById("question5").style.display="none";
+  document.getElementById("starting").style.display="block";
+}
+function simul(){
+  document.getElementById("div2").style.display="none";
+  document.getElementById("sit1").style.display="block";
+}
+function wrongans1(){
+  document.getElementById("counter").style.backgroundColor="#F55B51";
+  document.getElementById("optionc").innerHTML="Wrong!";
+}
+function wrongans2(){
+  document.getElementById("friend").style.backgroundColor="#F55B51";
+  document.getElementById("optionf").innerHTML="Wrong!";
+}
+function wrongans3(){
+  document.getElementById("physical").style.backgroundColor="#F55B51";
+  document.getElementById("optionp").innerHTML="Wrong!";
+}
+function wrongans4(){
+  document.getElementById("distance").style.backgroundColor="#F55B51";
+  document.getElementById("optiond").innerHTML="Wrong!";
+}
+function wrongans5(){
+  document.getElementById("skip").style.backgroundColor="#F55B51";
+  document.getElementById("options").innerHTML="Wrong!";
+}
+function wrongans6(){
+  document.getElementById("tag").style.backgroundColor="#F55B51";
+  document.getElementById("optiont").innerHTML="Wrong!";
+}
+function correct(){
+  document.getElementById("sit1").style.display="none";
+  document.getElementById("correctsit1").style.display="block";
+}
+function correct2(){
+  document.getElementById("sit2").style.display="none";
+  document.getElementById("correctsit2").style.display="block";
+}
+function correct3(){
+  document.getElementById("sit3").style.display="none";
+  document.getElementById("correctsit3").style.display="block";
+}
+function nextsit(){
+  document.getElementById("correctsit1").style.display="none";
+  document.getElementById("sit2").style.display="block";
+}
+function nextsit2(){
+  document.getElementById("correctsit2").style.display="none";
+  document.getElementById("sit3").style.display="block";
+}
+function nextsit3(){
+  document.getElementById("correctsit3").style.display="none";
+  document.getElementById("div2").style.display="block";
+}
+function timepal(){
+  document.getElementById("timequest").style.display="none";
+  document.getElementById("mask").style.display="block";
+  startTimer();
+}
+
+function startTimer() {
+  const TIME_LIMIT = 31;
+  let timePassed = 0;
+  let timeLeft = TIME_LIMIT;
+  let timerInterval = null;
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("timer").innerHTML = timeLeft;
+    if (timeLeft===0){
+      clearInterval(timerInterval);
+      document.getElementById("mask").style.display="none";
+      document.getElementById("timequest").style.display="block";
+    }
+  }, 1000);
+}
+function startTimer2() {
+  const TIME_LIMIT = 31;
+  let timePassed = 0;
+  let timeLeft = TIME_LIMIT;
+  let timerInterval = null;
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("timer2").innerHTML = timeLeft;
+    if (timeLeft===0){
+      clearInterval(timerInterval);
+      document.getElementById("sanitize").style.display="none";
+      document.getElementById("timequest").style.display="block";
+    }
+  }, 1000);
+}
+var counter=0;
+function mask1(){
+  document.getElementById("maskbutton").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto").style.display="block";
+    document.getElementById("explanation").style.display="block";
+  }
+}
+function mask2(){
+  document.getElementById("maskbutton2").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+        document.getElementById("nexto").style.display="block";
+        document.getElementById("explanation").style.display="block";
+  }
+}
+function mask3(){
+  document.getElementById("maskbutton3").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+        document.getElementById("nexto").style.display="block";
+        document.getElementById("explanation").style.display="block";
+  }
+}
+function mask4(){
+  document.getElementById("maskbutton4").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+        document.getElementById("nexto").style.display="block";
+        document.getElementById("explanation").style.display="block";
+  }
+}
+function mask5(){
+  document.getElementById("maskbutton5").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+        document.getElementById("nexto").style.display="block";
+        document.getElementById("explanation").style.display="block";
+  }
+}
+function mask6(){
+  document.getElementById("maskbutton6").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+        document.getElementById("nexto").style.display="block";
+        document.getElementById("explanation").style.display="block";
+  }
+}
+function mask7(){
+  document.getElementById("maskbutton7").style.color='red';
+  counter=counter+1;
+  document.getElementById("counter1").innerHTML=counter;
+  if (counter===7){
+    var element=document.getElementById("timer");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto").style.display="block";
+    document.getElementById("explanation").style.display="block";
+  }
+}
+var counter2=0;
+function sanitizer1(){
+  document.getElementById("sanbut1").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer2(){
+  document.getElementById("sanbut2").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer3(){
+  document.getElementById("sanbut3").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer4(){
+  document.getElementById("sanbut4").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer5(){
+  document.getElementById("sanbut5").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer6(){
+  document.getElementById("sanbut6").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer7(){
+  document.getElementById("sanbut7").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+        document.getElementById("explanation2").style.display="block";
+  }
+}
+function sanitizer8(){
+  document.getElementById("sanbut8").style.color='red';
+  counter2=counter2+1;
+  document.getElementById("counter2").innerHTML=counter2;
+  if (counter2===8){
+    var element=document.getElementById("timer2");
+    element.parentNode.removeChild(element);
+    document.getElementById("nexto2").style.display="block";
+    document.getElementById("explanation2").style.display="block";
+  }
+}
+function nextArt(){
+  document.getElementById("mask").style.display="none";
+  document.getElementById("sanitize").style.display="block";
+  startTimer2();
+}
+function nextArt2(){
+  document.getElementById("sanitize").style.display="none";
+  document.getElementById("timequest").style.display="block";
+  startTimer2();
+}
+</script>
+</head>
+<body style="background: linear-gradient(to bottom, #FFFFCC 0%,#FFFFFF 20%,#FFFFFF 90%,#FFFFCC 100%);">
+<div class="div1" data-aos="fade-up">
+  <img src=Banner.png style="width:100%">
+  <div class="centered">
+  <h1 style="font-size:50px">A digital Guide: Navigating the Post-Covid World</h1>
+  <p style="font-size:20px;">We're all trying our hardest to fight Covid-19 currently, but what next? How will our world change from this
+    pandemic, and what can we do to adopt to them? Find out right here on our website.</p>
+</div>
+</div>
+<div id="div2" data-aos="fade-up" ><img src=social.png style="float:right;width:250px;height:250px;margin-left:5%;">
+  <h1 style="font-size:35px;  font-family:'Garamond',serif;">How should you behave in social situations?</h1>
+  <p style="font-size:25px;text-align:justify;">Obviously, a world after the pandemic is going to change your outdoor habits - whether you like it or not.
+    And it is easy to get attached to our old norm of living. How should we change then? Take this short simulation
+    to see how well you fare on living in the new world.</p>
+    <button class="button button1" onClick="simul()">Let's Go!</button>
+</div>
+<div class="simula" id="sit1" data-aos="fade-up">
+  <img src=gym.png style="width:60%;height:300px;">
+  <p>You wake up early in the morning and decided to go to the gym for a workout. You need to use gym weights for <thead>
+    workout but you didn't bring any. What will you do?
+  <div class="container">
+  <img src=counter2.png style="width:100%;height:250px;float:left;" class ="image">
+  <div class="overlay" id="counter" onClick="wrongans1()">
+    <div class="text" id="optionc">Rent one from the service counter.</div>
+  </div>
+</div>
+<div class="container" >
+<img src=friend.png style="width:80%;height:250px;" class ="image">
+<div class="overlay" id="friend" onClick="wrongans2()">
+  <div class="text" id="optionf">Borrow one from your friend and sanitize it.</div>
+</div>
+</div>
+<div class="container" >
+<img src=weights2.png style="width:100%;height:250px;" class ="image">
+<div class="overlay" onClick="correct()">
+  <div class="text">Head home and bring yours.</div>
+</div>
+</div>
+</div>
+<div class="simula" id="correctsit1" data-aos="fade-up">
+  <img src=gym.png style="width:50%;height:300px;">
+<p> Correct! It is safer to bring your own weights, as gym equipments can't be sanitized. Harsh chemicals
+  found in sanitisers can deteriorate rubber and metals, both widely used in gym equipments.</p>
+<button class="button button1" onClick="nextsit()">Next >></button >
+</div>
+<div class="simula" id="sit2" data-aos="fade-up">
+  <img src=indoor.png style="width:45%;height:300px; box-shadow: 5px 5px 2px grey;">
+  <p>You are hiring a worker to repair your spoilt washing machine. What are the precautions that is WRONG to
+    follow during the service?</p>
+  <div class="container">
+  <img src=physical.png style="width:100%;height:250px;float:left;" class ="image">
+  <div class="overlay" id="physical" onClick="wrongans3()">
+    <div class="text" id="optionp">Avoid physical greeting</div>
+  </div>
+</div>
+<div class="container" >
+<img src=distance.png style="width:100%;height:250px;" class ="image">
+<div class="overlay" id="distance" onClick="wrongans4()">
+  <div class="text" id="optiond">Maintain a safe distance with the service provider</div>
+</div>
+</div>
+<div class="container" >
+<img src=window.jpg style="width:100%;height:250px;" class ="image">
+<div class="overlay" onClick="correct2()">
+  <div class="text">Close the windows</div>
+</div>
+</div>
+</div>
+<div class="simula" id="correctsit2" data-aos="fade-up">
+  <img src=happy.png style="width:50%;height:350px; box-shadow: 5px 5px 2px grey;">
+<p> Correct! You should open the windows for maximum ventilation. In the post-Covid world, it is important
+to adapt to the new norm, where you want to avoid physical greeting and maintain social distancing at all times,
+even after the pandemic.</p>
+<button class="button button1" onClick="nextsit2()">Next >></button >
+</div>
+<div class="simula" id="sit3" data-aos="fade-up">
+  <img src=grass.png style="width:50%;height:250px;">
+  <p>You are planning to host a gathering and you need to decide an activity for the kids to play outdoor.
+  Which activity will you choose?</p>
+  <div class="container" >
+  <img src=frisbee.png style="width:80%;height:250px;" class ="image">
+  <div class="overlay" onClick="correct3()">
+    <div class="text">Frisbee</div>
+  </div>
+  </div>
+  <div class="container">
+  <img src=skipping.png style="width:80%;height:250px;float:left;" class ="image">
+  <div class="overlay" id="skip" onClick="wrongans5()">
+    <div class="text" id="options">Rope skipping</div>
+  </div>
+</div>
+<div class="container" >
+<img src=tag.png style="width:100%;height:250px;" class ="image">
+<div class="overlay" id="tag" onClick="wrongans6()">
+  <div class="text" id="optiont">A game of tag</div>
+</div>
+</div>
+</div>
+<div class="simula" id="correctsit3" data-aos="fade-up">
+  <img src=frisbi.png style="width:50%;height:250px;">
+<p> Correct! Both tag and rope skipping together means frequent direct contact, which is not ideal
+even after the pandemic. Frisbee can reduce the amount of direct contact among the children, thus
+reducing germs transmission.</p>
+<button class="button button1" onClick="nextsit3()">Next>></button >
+</div>
+<div class="div3" id="starting" style="font-size:25px;text-align:justify;" data-aos="fade-right"><img src=think.png style="float:left;width:250px;height:250px;margin-right:5%;">
+  <h1 style="font-family:'Garamond',serif;">Changes in life - what to expect?</h1>
+  <p>It is almost guaranteed we will see a shift in our lives - industries, infrastructures and whatnot.
+    And believe it or not, how we lead our lifestyles today may well continue throughout the life in a
+    post-Covid world. But do you know what to expect? Take this quiz to see how much you know!</p>
+    <button class="button button2" onClick="start()">Let's Go!</button>
+</div>
+<div class="question"id="question1" data-aos="fade-right"><img src=zoom.png style="float:left; border-radius:50%;width:250px;height:250px;margin-right:5%;">
+  <p>In the post-covid world, industries are likely to see a shift in working methods, largely shifting
+    to working remotely and conducting meetings through platforms such as _______, google meet, etc.</p>
+    <p>Answer:</p><button class="button button4" id="answer1" onClick="checkAnswer1()">Zoom</button>
+    <p id="tada" style="display:none">Zoom</p>
+    <div class="bottom-left"><button class="button button2" onClick="back1()">Back</button ></div>
+    <div class="bottom-right"><button class="button button2" onClick="next1()">Next>></button ></div>
+</div>
+<div class="question"id="question2" data-aos="fade-right"><img src=online.png style="float:left; border-radius:50%;width:250px;height:250px;margin-right:5%;">
+  <p>______________ will be more commonplace than ever as a result of the surge of customers during the pandemic.
+  The industry is also likely to see some major improvements to meet the customers' demands.</p>
+    <p>Answer:</p><button class="button button4" id="answer2" onClick="checkAnswer2()">Zoom</button>
+    <p id="tada2" style="display:none">Online shopping</p>
+    <div class="bottom-left"><button class="button button2" onClick="back2()">Back</button ></div>
+    <div class="bottom-right"><button class="button button2" onClick="next2()">Next>></button ></div>
+</div>
+<div class="question"id="question3" data-aos="fade-right"><img src=environment.png style="float:left; border-radius:50%;width:250px;height:250px;margin-right:5%;">
+  <p>We will learn to put in place good practices for living and working with more human pace and
+    better conditions for the ____________ after the pandemic.</p>
+    <p>Answer:</p><button class="button button4" id="answer3" onClick="checkAnswer3()">Zoom</button>
+    <p id="tada3" style="display:none">environment</p>
+        <div class="bottom-left"><button class="button button2" onClick="back3()">Back</button ></div>
+    <div class="bottom-right"><button class="button button2" onClick="next3()">Next>></button ></div>
+</div>
+<div class="question"id="question4" data-aos="fade-right"><img src=travelling.png style="float:left; border-radius:50%;width:250px;height:250px;margin-right:5%;">
+  <p>The ____________ industry will see some major improvements to meet the demands of travellers as a result of
+  their urge to travel after a long self-quarantine period during the pandemic.</p>
+    <p>Answer:</p><button class="button button4" id="answer4" onClick="checkAnswer4()">Zoom</button>
+    <p id="tada4" style="display:none">travelling</p>
+        <div class="bottom-left"><button class="button button2" onClick="back4()">Back</button ></div>
+    <div class="bottom-right"><button class="button button2" onClick="next4()">Next>></button ></div>
+</div>
+<div class="question"id="question5" data-aos="fade-right"><img src=political.png style="float:left; border-radius:50%;width:250px;height:250px;margin-right:5%;">
+  <p>Covid-19 has highlighted existing _________, economic and social dysfunctionalities that occur around the world.
+  Therefore, it is likely we will see some changes to these aspects.</p>
+    <p>Answer:</p><button class="button button4" id="answer5" onClick="checkAnswer5()">Zoom</button>
+    <p id="tada5" style="display:none">political</p>
+        <div class="bottom-left"><button class="button button2" onClick="back5()">Back</button ></div>
+    <div class="bottom-right"><button class="button button2" onClick="next5()">Next>></button ></div>
+</div>
+<div class="div4" id="timequest"style="font-family:'Garamond',serif;" data-aos="fade-left"><img src=stopwatch.png style="float:right;width:250px;height:250px;margin-left:5%;">
+<h1>30 Seconds - Quick!</h1>
+<p style="font-size:25px;text-align:justify;">If you've experienced the Covid-19 pandemic, you should know that time really slips by without a notice.
+  How well can you perform in a limited time? We've prepared some articles, where you'll be given a limited amount of
+  time to identify all the locations of the keyword specified. Are you up to the challenge?</p>
+  <button class="button button5" onClick="timepal()">Bring it!</button>
+</div>
+<div class="artsy" id="mask" data-aos="fade-left">
+  <div class="bottom-right">
+  <p id="timer" style="font-family: 'Monaco', Courier, monospace; font-size:50px;float:left;"></p>
+</div>
+<p style="font-size:20px;text-align:justify;">Click all the word <span style="color:red;">"masks"</span> that you find in 30 SECONDS.</p>
+  <p style="font-size:20px;text-align:justify;float:right;">We acknowledge that there are limited supplies of <button class="button button6" id="maskbutton" onClick="mask1()">medical masks</button> worldwide. Before going into the details of
+  <button class="button button6" id="maskbutton2" onClick="mask2()">mask</button> use in the community, it is important to first note that we should ensure there is a sufficient supply of
+    <button class="button button6" id="maskbutton3" onClick="mask3()">face masks</button> for use by healthcare workers. In addition, high-performance respirators such as N95 should be reserved
+    for healthcare settings where they will be used most effectively. However, it is inevitable that healthy individuals
+    from affected areas start to opt for the use of <button class="button button6" id="maskbutton4" onClick="mask4()">medical masks</button> when there is an increased evidence of community outbreaks,
+    particularly now that the WHO softened their stance on their use. As of 10 May 2020, the outbreak of COVID-19 has resulted
+    in more than 4 million confirmed cases worldwide in over 209 countries/territories, causing more than 280 000 deaths .
+    Infections spread from person to person in the community, and it is essential to identify and implement measures to
+    reduce transmission to slow down or even stop spread. Protective behaviors and actions at the individual level can
+    contribute to reducing transmission at the community level .</p>
+    <p style="font-size:20px;text-align:justify;float:right;">
+    However, confusion from previous public health guidelines has already resulted in stigmatization in Western
+    countries toward the choice of using <button class="button button6" id="maskbutton5" onClick="mask5()">masks</button> by many Asian communities as one of the means to prevent the spread
+    of SARS-CoV-2. Research has shown that it is indeed a challenge for a conceptual change to occur when a strong medical
+    misconception had rooted in the general community, as in the case of misinformation against vaccination . There have
+    been reports on both the continuous mistrust on the effectiveness of <button class="button button6" id="maskbutton6" onClick="mask6()">masks</button> and the improper use
+    of <button class="button button6" id="maskbutton7" onClick="mask7()">masks</button> in the community.</p>
+    <p> Words found:</p>
+    <p id="counter1"></p>
+    <p id="explanation" style="display:none;font-size:20px;text-align:justify;float:left;">As you can see, despite what seems to be an extremely
+      lengthy article filled with what you might presume to be boring, uninteresting facts and evidence, the main point of the article
+      is "masks", to convince the users to wear face masks.</p>
+    <button class="button button5" id="nexto" style="display:none;float:right" onClick="nextArt()">Next</button>
+
+</div>
+<div class="artsy" id="sanitize" data-aos="fade-left">
+  <div class="bottom-right">
+  <p id="timer2" style="font-family: 'Monaco', Courier, monospace; font-size:50px;float:left;"></p>
+</div>
+<p style="font-size:20px;text-align:justify;">Click all the word <span style="color:red;">"hand sanitizer"</span> that you find in 30 SECONDS.</p>
+  <p style="font-size:20px;text-align:justify;float:right;">Organizations that encourage regular use of <button class="button button6" id="sanbut1" onClick="sanitizer1()">hand sanitizer</button> tend to
+    have healthier workers. A study featured in BMC Infectious Diseases found that office workers who were encouraged to use an
+    alcohol-based <button class="button button6" id="sanbut2" onClick="sanitizer2()">hand sanitizer</button> at least five times each workday were about two-thirds less likely to get sick than those
+    who continued to just wash their hands.</p>
+    <p style="font-size:20px;text-align:justify;float:right;">A 2015 survey found that while 92 percent of Americans believe it’s
+       important to wash their hands after using a public restroom, only 66 percent of them follow through. Over a
+       third of survey respondents admitted to skipping soap and rinsing with water. This makes it extra important
+       to provide <button class="button button6" id="sanbut3" onClick="sanitizer3()">hand sanitizer</button> in the restroom. If employees are in a rush and don’t think to stop and rinse with soap and
+       water, providing a backup option near sinks and at the doors ensures germs don’t escape the restroom.</p>
+    <p style="font-size:20px;text-align:justify;float:right;">The best way to remind employees to use <button class="button button6" id="sanbut4" onClick="sanitizer4()">hand sanitizer</button> is by making it
+      easily accessible and always within sight. It’s important to place <button class="button button6" id="sanbut5" onClick="sanitizer5()">hand sanitizer</button> near and around high-touch surfaces and
+      communal areas, including:  </p>
+      <p style="font-size:20px;text-align:justify;float:right;">Entrances and exits. A single doorknob could potentially be the
+        cause of a widespread illness in the workplace. In fact, new research showed that a within two to four hours,
+       a virus placed on a doorknob was picked up by 40 to 60 percent of workers and visitors within the facility. In
+       addition to frequently disinfecting doorknobs, light switches and other high-touch surfaces within the workplace, make
+       sure to also provide a hand sanitizing station nearby to limit the spread of infection.</p>
+      <p style="font-size:20px;text-align:justify;float:right;">Cafeterias, food courts and break rooms, and if food is consumed
+      with germ-ridden hands, it’s easy to digest the germs and become infected with several diseases. One of the germiest
+      hotspots in an office is the breakroom and kitchen, according to an NSF International study. Although <button class="button button6" id="sanbut6" onClick="sanitizer6()">hand sanitizer</button>
+      is not a replacement for anyone who prepares food, it can help eliminate certain germs. </p>
+      <p style="font-size:20px;text-align:justify;float:right;">Meeting rooms. Meeting rooms are often packed with employees,
+      clients and other visitors who exchange handshakes, thus swapping germs. By providing guests and employees with an
+      easy-to-access hand sanitizing station, either near the door or at the table, allows them to safeguard their hands
+       against germs before and after the meeting takes place.</p>
+    <p style="font-size:20px;text-align:justify;float:right;">Employee desks. Desks, phones, computer keyboards and computer
+       mice are key germ transfer points because people touch them so often. Considering that employees spend the
+       majority of their day at their desks where they also eat, drink and even cough and sneeze, desks become “a minefield
+        of viruses” which can live on a surface for up to three days. Placing individual <button class="button button6" id="sanbut7" onClick="sanitizer7()">hand sanitizers</button> at desks keeps hand
+       hygiene within reach.</p>
+    <p style="font-size:20px;text-align:justify;float:right;">High traffic areas. Providing <button class="button button6" id="sanbut8" onClick="sanitizer8()">hand sanitizer</button> outside of the
+      office is also important. High-traffic areas like airport terminals, mall hallways and recreational centers should
+      offer hand hygiene stations to ensure visitors stay as healthy as possible. Not only does this keep high-traffic areas
+      clean, it helps improve the image of the airport, mall or rec center.</p>
+
+    <p> Words found:</p>
+    <p id="counter2"></p>
+    <p id="explanation2" style="display:none;font-size:20px;text-align:justify;float:left;">As you can see, despite what seems to be an extremely
+      lengthy article filled with what you might presume to be boring, uninteresting facts and evidence, the main point of the article
+      is "hand sanitizers", to convince the users to sanitize.</p>
+    <button class="button button5" id="nexto2" style="display:none;float:right" onClick="nextArt2()">Finish!</button>
+
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+</body>
+</html>
